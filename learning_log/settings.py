@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wm2hwgmd($ife-$fdil#_&d7*^mph8_40a$(2!dq00h5y#sv(j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.zongqiqi.ink']
 
@@ -40,10 +40,12 @@ INSTALLED_APPS = [
 
     #第三方应用程序
     'bootstrap3',
+    'markdown_deux',
 
     #我的app
     'learning_logs',
     'users',
+    'reading',
 ]
 
 MIDDLEWARE = [
