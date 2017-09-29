@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Topic,Entry
 from .forms import TopicForm,EntryForm
 
-
+from markdown import markdown
 
 def index(request):
 	"""学习笔记的主页"""
@@ -27,6 +27,12 @@ def topic(request,topic_id):
 		raise Http404
 
 	entries=topic.entry_set.order_by('-date_added')
+	for entry in entries:
+		entry.text=markdown(entry.text,extensions=['markdown.extensions.extra',
+													'markdown.extensions.codehilite',
+													'markdown.extensions.toc',])
+
+
 	context={'topic':topic,'entries':entries}
 	return render(request,'learning_logs/topic.html',context)
 

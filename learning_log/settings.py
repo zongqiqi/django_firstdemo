@@ -40,12 +40,12 @@ INSTALLED_APPS = [
 
     #第三方应用程序
     'bootstrap3',
-    'markdown_deux',
 
     #我的app
     'learning_logs',
     'users',
     'reading',
+    'mytest',
 ]
 
 MIDDLEWARE = [

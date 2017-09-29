@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^learning_log/',include('learning_logs.urls',namespace='learning_logs')), 
     url(r'^users/',include('users.urls',namespace='users')),
     url(r'^reading/',include('reading.urls',namespace='reading')),
-
+    url(r'^test/',include('mytest.urls',namespace='test')),
     
 ]

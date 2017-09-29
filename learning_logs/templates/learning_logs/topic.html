@@ -1,5 +1,4 @@
 {% extends 'learning_logs/base.html' %}
-{% load markdown_deux_tags %}
 
 {% block header %}
 <h2>
@@ -16,9 +15,9 @@
 {% for entry in entries %}
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3>
+        <h3>{{entry.name}}<small>
             {{ entry.date_added|date:'M d, Y H:i' }}
-            <small>
+            
                 <a href="{% url 'learning_logs:edit_entry' entry.id %}">
                     edit entry
                 </a>
@@ -26,7 +25,7 @@
         </h3>
     </div>
     <div class="panel-body">
-        {{ entry.text |markdown }}
+        {{ entry.text |safe }}
     </div>
 </div>
 <!-- panel -->

@@ -1,0 +1,52 @@
+{% load bootstrap3 %}
+{% load markdown_deux_tags %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="IE=ege" http-equiv="X-UA-Compatible">
+                <meta content="width=device-width,initial-sacle=1" name="viewport">
+                    <style>
+                        canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  background-color:black;
+}
+div.box{
+  background-color: white;
+  width: 200px;
+}
+.bg2{
+background: #C7EDCC;
+filter:alpha(opacity=50); /* ie 有效*/
+-moz-opacity:0.5; /* Firefox 有效*/
+opacity: 0.5; /* 通用，其他浏览器 有效*/
+}
+
+.bg1{ background:#C7EDCC;width:100%;height:100px;padding:5px;color:#000; 
+filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5}
+                    </style>
+                    <title>
+                        Background
+                    </title>
+                    {% bootstrap_css %}
+        {% bootstrap_javascript %}
+                </meta>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <canvas height="599" id="c" style="position:fixed" width="1366">
+        </canvas>
+        <script src=" {%static 'reading/index.js' %}">
+        </script>
+        <div class="bg1">
+            <h1>背景透明，文字不透明</h1>
+        </div>
+        <div class="bg2">
+            <h1>文字背景都透明</h1>
+        </div>
+    </body>
+</html>
