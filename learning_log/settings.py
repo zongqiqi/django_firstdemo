@@ -131,6 +131,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_URL='/users/login'
 
 #django-bootstrap3的设置
-BOOTSTRAP={
+BOOTSTRAP3={
     'include_jquery':True,
 }

@@ -12,22 +12,30 @@
         add new entry
     </a>
 </p>
+<div class="panel-group" id="panel-677207">
 {% for entry in entries %}
+
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3>{{entry.name}}<small>
-            {{ entry.date_added|date:'M d, Y H:i' }}
-            
-                <a href="{% url 'learning_logs:edit_entry' entry.id %}">
-                    edit entry
-                </a>
-            </small>
-        </h3>
+        <a class="panel-title collapsed" data-parent="#panel-677207" data-toggle="collapse" href="#panel-element-{{entry.id}}">
+            <h3>
+                {{entry.name}}
+                <small>
+                    {{ entry.date_added|date:'M d, Y H:i' }}
+                    <a href="{% url 'learning_logs:edit_entry' entry.id %}">
+                        edit entry
+                    </a>
+                </small>
+            </h3>
+        </a>
     </div>
-    <div class="panel-body">
-        {{ entry.text |safe }}
+    <div class="panel-collapse collapse" id="panel-element-{{entry.id}}">
+        <div class="panel-body">
+            {{ entry.text |safe }}
+        </div>
     </div>
 </div>
+
 <!-- panel -->
 {% empty %}
 There are no entries for this topic yet.

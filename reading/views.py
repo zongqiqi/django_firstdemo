@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect,Http404
 from django.core.urlresolvers import reverse
+from markdown import markdown
 
 from .models import NameList
+from learning_logs.models import Topic,Entry
 
 
 # file_path='E:\\zongqiqi\\biandaima\\mypython\\txtread\\'
@@ -22,7 +24,7 @@ def index(request,namelist_id=1):
 		if int(namelist_id)-5+i <0:
 			namelist=NameList.objects.all()[:12]
 			break
-		if int(namelist_id)-5+i >len(namelist):
+		if int(namelist_id)-5+i >784:
 			namelist=NameList.objects.all()[772:]
 			break
 		else:
@@ -52,3 +54,18 @@ def catalog(request):
 	alllist_4=alllist[600:]
 	context={'alllist_1':alllist_1,'alllist_2':alllist_2,'alllist_3':alllist_3,'alllist_4':alllist_4,}
 	return render(request,'reading/catalog.html',context)
+
+def test2(request,topic_id=14):
+	topic=Topic.objects.get(id=topic_id)
+	if topic.owner!=request.user:
+		raise Http404
+
+	entries=topic.entry_set.order_by('-date_added')
+	for entry in entries:
+		entry.text=markdown(entry.text,extensions=['markdown.extensions.extra',
+													'markdown.extensions.codehilite',
+													'markdown.extensions.toc',])
+
+
+	context={'topic':topic,'entries':entries}
+	return render(request,'reading/test2.html',context)

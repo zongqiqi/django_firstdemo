@@ -9,4 +9,5 @@ urlpatterns=[
 	url(r'^next/(?P<namelist_id>\d+)/$',views.next,name='next'),
 	url(r'^before/(?P<namelist_id>\d+)/$',views.before,name='before'),
 	url(r'^catalog/$',views.catalog,name='catalog'),
+	url(r'^test2/$',views.test2,name='test2'),
 ]	

@@ -45,8 +45,8 @@ div.box{
                     </h3>
                     <div class="btn-toolbar" role="toolbar">
                     <div class="btn-group" align="center">
-                      <button style=" width:150px; height:52px;background:grey; color:#FFF" type="submit" name="button" id="button" class="btn btn-default"><a href="{% url 'reading:before' namelist_id %}">上一页</a></button>
-                      <button style=" width:150px; height:52px;background:grey; color:#FFF" class="btn btn-default"><a href="{% url 'reading:next' namelist_id %}">下一页</a></button>
+                      <a class="btn btn-primary btn-large" href="{% url 'reading:before' namelist_id %}">上一页</a>
+                      <a class="btn btn-primary btn-large" href="{% url 'reading:next' namelist_id %}">下一页</a>
                     </div>
                     </div>
                     </div>
