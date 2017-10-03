@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^users/',include('users.urls',namespace='users')),
     url(r'^reading/',include('reading.urls',namespace='reading')),
     url(r'^test/',include('mytest.urls',namespace='test')),
+    url(r'^love/',include('lovestory.urls',namespace='love')),
     
 ]
