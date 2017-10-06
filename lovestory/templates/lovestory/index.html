@@ -9,9 +9,13 @@
 
 <link href="{% static 'lovestory/css/default.css' %}" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="{% static 'lovestory/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'lovestory/js/jquery-1.11.1.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'lovestory/js/garden.js' %}"></script>
 <script type="text/javascript" src="{% static 'lovestory/js/functions.js' %}"></script>
 <script type="text/javascript" src="{% static 'lovestory/js/jquery.lightbox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'lovestory/js/gridify.js' %}"></script>
+
+
 </head>
 
 <body>
@@ -61,6 +65,19 @@
 	</div>
 </div>
 
+<div class="grid">
+	<img src="{% static 'lovestory/loveimage/2D4A24B64319EFDF35C3315C53C8F459.jpg'%}">
+	<img src="{% static 'lovestory/loveimage/16BC0FF92D1793E4FAC4A19C5996EE70.jpg'%}">
+	<img src="{% static 'lovestory/loveimage/84D348D44181EFE4A0C8B52B415471BF.jpg'%}">	
+	<img src="{% static 'lovestory/loveimage/2678AACA8C5556273233C7E67F17A83D.jpg'%}">	
+	<img src="{% static 'lovestory/loveimage/8605F834B81356B20B72CBD889F20A28.jpg'%}">
+
+</div>
+
+
+
+
+
 <script type="text/javascript">
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
@@ -95,8 +112,21 @@ if (!document.createElement('canvas').getContext) {
 }
 </script>
 
-
-
+<!-- 照片集 -->
+<script type="text/javascript">
+	$(window).load(function() {
+		var options =
+		{
+			srcNode: 'img',             // grid items (class, node)
+			margin: '20px',             // margin in pixel, default: 0px
+			width: '250px',             // grid item width in pixel, default: 220px
+			max_width: '',              // dynamic gird item width if specified, (pixel)
+			resizable: true,            // re-layout if window resize
+			transition: 'all 0.5s ease' // support transition for CSS3, default: all 0.5s ease
+		}
+		$('.grid').gridify(options);
+	});
+</script>
 
 
 
