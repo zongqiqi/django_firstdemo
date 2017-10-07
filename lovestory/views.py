@@ -1,4 +1,17 @@
 from django.shortcuts import render
 
+import os
+
 def index(request):
-	return render(request,'lovestory/index.html')
+	images=[]
+	path=r'/static/lovestory/loveimage/'
+	pwd=os.path.dirname(__file__).replace('\\','/')
+	dest=pwd+path
+	files=os.listdir(dest)
+	for file in files:
+		mijp=os.path.splitext(file)[1]
+		if mijp=='.jpg':
+			file2='lovestory/loveimage/'+file
+			images.append(file2)
+	context={'images':images}
+	return render(request,'lovestory/index.html',context)

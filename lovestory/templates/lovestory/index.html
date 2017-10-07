@@ -66,12 +66,12 @@
 </div>
 
 <div class="grid">
-	<img src="{% static 'lovestory/loveimage/2D4A24B64319EFDF35C3315C53C8F459.jpg'%}">
-	<img src="{% static 'lovestory/loveimage/16BC0FF92D1793E4FAC4A19C5996EE70.jpg'%}">
-	<img src="{% static 'lovestory/loveimage/84D348D44181EFE4A0C8B52B415471BF.jpg'%}">	
-	<img src="{% static 'lovestory/loveimage/2678AACA8C5556273233C7E67F17A83D.jpg'%}">	
-	<img src="{% static 'lovestory/loveimage/8605F834B81356B20B72CBD889F20A28.jpg'%}">
-
+	{% for image in images %}
+		<img src="{% static image %}">
+	{% empty %}
+		<h4>empty</h4>
+	{% endfor %}
+<!-- 	<img src="{% static 'lovestory/loveimage/2D4A24B64319EFDF35C3315C53C8F459.jpg'%}"> -->
 </div>
 
 
