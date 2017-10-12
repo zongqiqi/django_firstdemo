@@ -13,6 +13,7 @@
 <script type="text/javascript" src="{% static 'lovestory/js/garden.js' %}"></script>
 <script type="text/javascript" src="{% static 'lovestory/js/functions.js' %}"></script>
 <script type="text/javascript" src="{% static 'lovestory/js/jquery.lightbox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'lovestory/js/jquery.lightbox.css' %}"></script>
 <script type="text/javascript" src="{% static 'lovestory/js/gridify.js' %}"></script>
 
 
@@ -67,7 +68,7 @@
 
 <div class="grid">
 	{% for image in images %}
-		<img src="{% static image %}">
+		<a href="{% static image %}" rel="lightbox-myGroup"><img src="{% static image %}" ></a>
 	{% empty %}
 		<h4>empty</h4>
 	{% endfor %}
