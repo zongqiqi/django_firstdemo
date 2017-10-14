@@ -5,7 +5,7 @@ import os
 def index(request):
 	images=[]
 	path=r'/static/lovestory/loveimage/'
-	pwd=os.path.dirname(__file__).replace('\\','/')
+	pwd=os.path.dirname(__file__)
 	dest=pwd+path
 	files=os.listdir(dest)
 	for file in files:
