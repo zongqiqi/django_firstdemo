@@ -1,9 +1,8 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 body {
-  background: #292931;
-  padding: 0;
-  margin: 0;
+  background-size:cover;
 }
+
 
 [data-icon]:after {
   font-family: "entypo";
