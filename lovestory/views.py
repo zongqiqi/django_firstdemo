@@ -37,3 +37,5 @@ def login(request):
 				images.append(file2)
 		context={'images':images}
 		return render(request,'lovestory/index.html',context)
+	else:
+		raise Http404
