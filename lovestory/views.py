@@ -39,3 +39,7 @@ def login(request):
 		return render(request,'lovestory/index.html',context)
 	else:
 		raise Http404
+
+
+def test2(request):
+	return render(request,'lovestory/test2.html')

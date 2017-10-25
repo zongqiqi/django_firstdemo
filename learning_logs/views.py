@@ -80,3 +80,23 @@ def edit_entry(request,entry_id):
 			return HttpResponseRedirect(reverse('learning_logs:topic',args=[topic.id]))
 	context={'entry':entry,'topic':topic,'form':form}
 	return render(request,'learning_logs/edit_entry.html',context)
+
+@login_required
+def search(request):
+	if request.method=='POST':
+		form_data=request.POST['search']
+		search_result=Entry.objects.filter(text__icontains=form_data)
+		entries=search_result
+		for entry in entries:
+			entry.text=markdown(entry.text,extensions=['markdown.extensions.extra',
+													'markdown.extensions.codehilite',
+													'markdown.extensions.toc',])
+
+	# else:
+	# 	from_data='No form data'
+	# if request.user.username=="Zongqiqi":
+	# 	msg="I am the king."
+	# else:
+	# 	msg=dir(request.user)
+	context={'entries':entries}	
+	return render(request,'learning_logs/search.html',context)

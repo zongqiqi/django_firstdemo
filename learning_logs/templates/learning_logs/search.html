@@ -1,0 +1,39 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block header %}
+<h2>
+    Search Result
+</h2>
+{% endblock header %}
+
+{% block content %}
+
+<div class="panel-group" id="panel-677207">
+{% for entry in entries %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a class="panel-title collapsed" data-parent="#panel-677207" data-toggle="collapse" href="#panel-element-{{entry.id}}">
+            <h3>
+                {{entry.name}}&nbsp;&nbsp;
+                <small>
+                    {{ entry.date_added|date:'M d, Y H:i' }}&nbsp;&nbsp;
+                    <a href="{% url 'learning_logs:edit_entry' entry.id %}">
+                        edit entry
+                    </a>
+                </small>
+            </h3>
+        </a>
+    </div>
+    <div class="panel-collapse collapse" id="panel-element-{{entry.id}}">
+        <div class="panel-body">
+            {{ entry.text |safe }}
+        </div>
+    </div>
+</div>
+
+<!-- panel -->
+{% empty %}
+Sorry there is no data what you need .
+{% endfor %}
+{% endblock content %}

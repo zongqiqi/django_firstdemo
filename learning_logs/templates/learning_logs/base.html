@@ -15,6 +15,9 @@
     </meta>
     </meta>
     </meta>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!-- 搜索框 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'learning_logs/search.css' %}">
+
     </head>
 
 
@@ -35,6 +38,14 @@
                             <a href="{% url 'learning_logs:topics' %}">
                                 Topics
                             </a>
+                        </li>
+                        <li class="search bar7">
+                              <form action="/learning_log/search/" method="post">
+                                {% csrf_token %}
+                                <input name='search' type="text" placeholder="请输入您要搜索的内容...">
+                                <button class="search" type="submit"></button>
+                              </form>
+
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
