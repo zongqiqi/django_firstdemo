@@ -85,7 +85,7 @@ def edit_entry(request,entry_id):
 def search(request):
 	if request.method=='POST':
 		form_data=request.POST['search']
-		search_result=Entry.objects.filter(text__icontains=form_data)
+		search_result=Entry.objects.filter(text__icontains=form_data).order_by('-date_added')
 		entries=search_result
 		for entry in entries:
 			entry.text=markdown(entry.text,extensions=['markdown.extensions.extra',

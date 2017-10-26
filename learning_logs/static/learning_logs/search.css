@@ -1,3 +1,6 @@
+p{
+    text-indent:2em;    /*每个P段落，首行空出两个空格，即缩进两个字符*/
+}
 input, button {
       border: none;
       outline: none;
