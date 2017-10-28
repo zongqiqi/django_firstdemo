@@ -23,7 +23,7 @@ def test(request):
 	# if request.GET['username'] in ['zongqiqi','wangxiao'] and request.GET['password'] in ['xy0522']:
 	# 	return HttpResponseRedirect(reverse('love:index',))
 def login(request):
-	if request.GET['username'] in ['zongqiqi','wangxiao'] and request.GET['password'] in ['xy0522']:
+	if request.POST['username'] in ['zongqiqi','wangxiao'] and request.POST['password'] in ['xy0522']:
 		# return HttpResponseRedirect(reverse('love:index',))
 		images=[]
 		path=r'/static/lovestory/loveimage/'

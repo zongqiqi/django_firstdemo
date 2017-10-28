@@ -12,7 +12,8 @@
 <body background="{% static 'lovestory/image/66.jpg' %}">
 
   <center>
-  <form action="login" method="get">
+  <form action="login" method="post">
+    {% csrf_token %}
     <fieldset>
       <!-- Entypo &#128100; = User -->
       <input type="text" name="username" id="username" placeholder="Username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" data-validation-msg="Username must be 2 - 12 characters" required />
