@@ -1,0 +1,43 @@
+p{
+    text-indent:2em;    /*每个P段落，首行空出两个空格，即缩进两个字符*/
+}
+input, button {
+      border: none;
+      outline: none;
+    }
+
+    input {
+      width: 100%;
+      height: 42px;
+      padding-left: 13px;
+    }
+
+    .search button  {
+      height: 42px;
+      width: 42px;
+      cursor: pointer;
+      position: absolute;
+    }
+    .bar7 form {
+      height: 42px;
+    }
+    .bar7 input {
+      width: 250px;
+      border-radius: 42px;
+      border: 2px solid #324B4E;
+      transition: .3s linear;
+      float: right;
+    }
+    .bar7 input:focus {
+      width: 300px;
+    }
+    .bar7 button {
+      background: none;
+      top: -2px;
+      right: 0;
+    }
+    .bar7 button:before{
+      content: "\f002";
+      font-family: FontAwesome;
+      color: #324b4e;
+    }
