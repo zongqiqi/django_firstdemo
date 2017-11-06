@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect,Http404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 from .models import Topic,Entry
 from .forms import TopicForm,EntryForm
@@ -85,7 +86,10 @@ def edit_entry(request,entry_id):
 def search(request):
 	if request.method=='POST':
 		form_data=request.POST['search']
-		search_result=Entry.objects.filter(text__icontains=form_data).order_by('-date_added')
+
+		search_result=Entry.objects.filter(Q(text__icontains=form_data) | Q(name__icontains=form_data)).order_by('-date_added')
+		# search_result2=Entry.objects.filter(name__icontains=form_data).order_by('-date_added')
+		# search_result=search_result1+search_result2
 		entries=search_result
 		for entry in entries:
 			entry.text=markdown(entry.text,extensions=['markdown.extensions.extra',
