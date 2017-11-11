@@ -43,3 +43,7 @@ def login(request):
 
 def test2(request):
 	return render(request,'lovestory/test2.html')
+
+
+
+
