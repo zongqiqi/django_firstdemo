@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -15,13 +15,10 @@
   <form action="login" method="post">
     {% csrf_token %}
     <fieldset>
-      <!-- Entypo &#128100; = User -->
       <input type="text" name="username" id="username" placeholder="Username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" data-validation-msg="Username must be 2 - 12 characters" required />
       <label for="username" data-icon="&#128100;">Username</label>
-      <!-- Entypo &#128274; = Locked -->
       <input type="password" name="password" id="password" placeholder="Password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" data-validation-msg="Password must be 2-12 characters" required />
       <label for="password" data-icon="&#128274;">Password</label>
-      <!-- Entypo &#58542; = Right Arrow -->
       <button value="Submit" data-icon="&#58542;" />
     </fieldset>
   </form>
@@ -31,4 +28,34 @@
   <script src="{% static 'lovestory/login/index.js' %}"></script>
 </body>
 
-</html>
+</html> -->
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>晓宝宝和笨笨杨的幸福小站</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="{% static 'lovestory/login/style.css' %}">
+
+  
+</head>
+
+<body>
+    <div class="wrapper">
+    <form class="form-signin" form action="login" method="post"> 
+    {% csrf_token %}      
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
+  
+  
+</body>
