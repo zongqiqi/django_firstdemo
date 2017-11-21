@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'reading',
     'mytest',
     'lovestory',
+
+
 ]
 
 MIDDLEWARE = [
