@@ -44,6 +44,5 @@ def login(request):
 def test2(request):
 	return render(request,'lovestory/test2.html')
 
-
-
-
+def tour(request):
+	return render(request,'lovestory/BaiduMap.html')
