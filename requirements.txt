@@ -5,7 +5,7 @@ cffi==1.10.0
 chardet==3.0.4
 cryptography==2.0.3
 cycler==0.10.0
-Django==1.11.5
+Django==1.11.28
 django-bootstrap3==9.0.0
 django-markdown-deux==1.0.5
 Fabric==1.14.0
